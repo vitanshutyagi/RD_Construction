@@ -28,7 +28,7 @@ const Navbar = () => {
     function contactClicked () 
     {
         sessionStorage.setItem('goToContact', JSON.stringify(true));
-        console.log("contactNeeded = ",sessionStorage.getItem('goToContact'));
+        // console.log("contactNeeded = ",sessionStorage.getItem('goToContact'));
         navigate('/')
         setBarShow(false)
     }

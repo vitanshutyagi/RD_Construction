@@ -19,7 +19,7 @@ const Home = () => {
     function contact()
     {
         let contactNeeded = sessionStorage.getItem('goToContact');
-        console.log("contactNeeded 1 = ",contactNeeded);
+        // console.log("contactNeeded 1 = ",contactNeeded);
         if(contactNeeded == 'true')
         {
             if(myDivRef.current)
@@ -27,7 +27,7 @@ const Home = () => {
                 myDivRef.current.scrollIntoView({ behavior: 'smooth' });
             }
             sessionStorage.setItem('goToContact', JSON.stringify(false));
-            console.log("contactNeeded 2 ",contactNeeded);
+            // console.log("contactNeeded 2 ",contactNeeded);
         }
         
     }
