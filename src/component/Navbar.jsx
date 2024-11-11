@@ -80,10 +80,10 @@ const Navbar = () => {
                 <div className=" flex static items-center xs:block sm:hidden md:hidden lg:hidden">
                     <FaBarsStaggered onClick={() => setBarShow(true)} className="hover:cursor-pointer" size="2em"/>
                     { barShow ? 
-                        <div className="h-[210px] text-white font-semibold flex flex-col items-start gap-4 pl-4 pt-2 absolute bg-slate-600 left-0 right-10 w-[90%]">
+                        <div className="font-semibold flex flex-col items-start gap-4 pl-4 pt-2 absolute bg-white text-red-500 left-0 right-10 w-[95%] top-2 h-screen">
                             <div className="border-b-2 hover:cursor-pointer static border-white ">
                                 <span className="" onClick={(homeClicked)}>Home</span>
-                                <div className="absolute right-1 top-1"><RiCloseFill onClick={() => setBarShow(false)} className="size-10 border border-white rounded-lg hover:cursor-pointer"/></div>
+                                <div className="absolute right-1 top-1"><RiCloseFill onClick={() => setBarShow(false)} className="size-10 fill-black border border-white rounded-lg hover:cursor-pointer"/></div>
                             </div>
                             <div onClick={(aboutClicked)} className="border-b-2 hover:cursor-pointer border-white ">
                                 About
