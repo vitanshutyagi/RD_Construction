@@ -14,6 +14,9 @@ module.exports = {
         '2xl': '1536px',
         // Add more custom breakpoints if needed
       },
+      colors: {
+        navy: '#0a2f59',
+      },
     },
   },
   plugins: [],

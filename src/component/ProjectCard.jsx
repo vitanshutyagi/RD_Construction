@@ -1,4 +1,7 @@
 import React from "react";
+
+import "../styles/Main.css";
+
 import { FaRupeeSign } from "react-icons/fa";
 import { FaUserFriends } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -13,7 +16,7 @@ const ProjectCard = ({project}) => {
             //     <p className="text-white text-lg"><strong>Cost of Project :</strong> {project.COP}</p>
             // </div>
 
-            <div className="shadow-md bg-gray-300 h-[300px] rounded-2xl text-black flex flex-col justify-center gap-2 px-3 text-left items-start rounded-b-lg mb-4">
+            <div className=" shadow-md bg-gray-300 h-[300px] rounded-2xl text-black flex flex-col justify-center gap-2 px-3 text-left items-start rounded-b-lg mb-4">
                 <div className="border-b-2 border-red-500 w-full font-semibold text-center lg:text-xl md:text-xl sm:text-lg xs:text-lg">
                         {project.projectName}
                 </div>
