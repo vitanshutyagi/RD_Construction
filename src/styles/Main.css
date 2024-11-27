@@ -1,0 +1,29 @@
+/* client slider css  */
+
+.slider-track {
+    display: flex;
+    animation: slide 35s linear infinite;
+    height: 100px;
+    width: calc(900%);
+    /* Adjust duration (15s) for speed; ensure it's long enough for smooth sliding */
+  }
+  
+  .slider-item {
+    flex: 0 0 auto;
+    padding: 0 15px; /* Optional spacing between items */
+  }
+  
+  .slider-item img {
+    height: 100%; /* Ensure images fit within the container */
+    width: auto; /*Maintain aspect ratio */
+    object-fit: cover;
+  }
+  
+  @keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move by half of the duplicated track width */
+    }
+  }
