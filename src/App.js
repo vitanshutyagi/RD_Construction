@@ -25,7 +25,7 @@ function App() {
     <div className="App min-h-screen overflow-x-hidden">
           <Navbar/>
           <Routes>
-            <Route path='/' element={<Home/>}/>
+            <Route path='/' element={<Main/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/about' element={<About />}/>
             <Route path='/testimonials' element={<Testimonials/>}/>

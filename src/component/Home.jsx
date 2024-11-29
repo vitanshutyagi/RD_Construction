@@ -164,7 +164,7 @@ const Home = () => {
             </div>
 
             {/* contact us */}
-            <div ref={myDivRef} className="bg-slate-700 pt-2 flex flex-col gap-4 w-full">
+            <div className="bg-slate-700 pt-2 flex flex-col gap-4 w-full">
                 {/* heading */}
                 <div className="w-[92%] mx-auto flex flex-col gap-6">
                     <p className="lg:text-5xl md:text-5xl sm:text-xl xs:text-2xl text-white text-left">
