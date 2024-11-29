@@ -14,8 +14,11 @@ import { HiUserGroup } from "react-icons/hi2";
 import { IoIosMail } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoIosCall } from "react-icons/io";
+import { FaBarsStaggered } from "react-icons/fa6";
+import { RiCloseFill } from "react-icons/ri";
 
 import "../styles/Main.css";
+import logo from "../assets/logo.png";
 
 import ProjectCard from "./ProjectCard";
 import OngoingProjectCard from "./OngoingProjectCard";
@@ -23,6 +26,41 @@ import { PiWhatsappLogo } from "react-icons/pi";
 import { FaWhatsappSquare } from "react-icons/fa";
 
 function Main() {
+  // ...................................................
+
+  function contactClicked() {
+    sessionStorage.setItem("goToContact", JSON.stringify(true));
+    // console.log("contactNeeded = ",sessionStorage.getItem('goToContact'));
+    navigate("/");
+    setBarShow(false);
+  }
+  // const navigate = useNavigate()
+
+  const [barShow, setBarShow] = useState(false);
+  function aboutClicked() {
+    navigate("/about");
+    setBarShow(false);
+  }
+  function projectsClicked() {
+    navigate("/projects");
+    setBarShow(false);
+  }
+  function testimonialsClicked() {
+    navigate("/testimonials");
+    setBarShow(false);
+  }
+  function contactClicked() {
+    sessionStorage.setItem("goToContact", JSON.stringify(true));
+    // console.log("contactNeeded = ",sessionStorage.getItem('goToContact'));
+    navigate("/");
+    setBarShow(false);
+  }
+  function homeClicked() {
+    navigate("/");
+    setBarShow(false);
+  }
+  // ...................................................
+
   const navigate = useNavigate();
 
   const [showProjects, setShowProjects] = useState(false);
@@ -336,6 +374,15 @@ function Main() {
     window.open(whatsappURL, "_blank");
   };
 
+  // scroll to div 
+  const scrollToDiv = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    // setOptionBar(!optionBar)
+};
+
   const images = [
     "/utils/client-logos/agroh-infra.jpg",
     "/utils/client-logos/apco.png",
@@ -352,61 +399,169 @@ function Main() {
 
   return (
     <div className="h-auto flex flex-col items-center justify-center lg:gap-6 md:gap-6 sm:gap-5 xs:gap-5 w-screen ">
-      {/* intro */}
-      <Carousel className="w-full">
-        <Carousel.Item interval={2000} className="">
-          <img
-            className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[350px] xs:h-[350px] object-cover"
-            src="https://res.cloudinary.com/dnlsjmsfa/image/upload/v1719559433/szhgrnynx5nyxyy109la.jpg"
-            alt=""
-          />
-          {/* <ExampleCarouselImage text="First slide" /> */}
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={2000}>
-          <img
-            className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[350px] xs:h-[350px] object-cover"
-            src="https://res.cloudinary.com/dnlsjmsfa/image/upload/v1725872850/zsuge1dt2qbpaq5zwokw.jpg"
-            alt="image"
-          />
-          {/* <ExampleCarouselImage text="Second slide" /> */}
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={2000}>
-          <img
-            className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[350px] xs:h-[350px] object-cover"
-            src="http://res.cloudinary.com/dnlsjmsfa/image/upload/v1719559333/dgmtpopyo6xcglksrxd5.jpg"
-            alt="image"
-          />
-          {/* <ExampleCarouselImage text="Third slide" /> */}
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+      {/* navbar & carousal  */}
+      <div className="w-screen flex flex-col gap-0 bg-red-100">
+        <div className=" flex justify-around items-center lg:gap-36 xs:px-2 sm:px-2 md:px-10 lg:px-10 py-2 w-[100%] h[50%] bg-gray-800 text-white">
+          <div className="lg:w-[30%] md:w-[35%] sm:w-[40%] xs:w-[60%] gap-4 flex items-center">
+            <img
+              onClick={() => navigate("/")}
+              className=" rounded-full lg:h-20 md:h-20 sm:h-16 xs:h-16 hover:cursor-pointer"
+              src={logo}
+            />
+            <div className="lg:text-4xl md:text-4xl sm:text-lg xs:text-lg  font-semibold">
+              RD Construction CO.
+            </div>
+          </div>
+          <div className=" flex items-center xs:hidden sm:block md:block lg:block visible">
+            <p
+              onClick={() => scrollToDiv("about-section")}
+              className="text-2xl select-none font-medium hover:cursor-pointer"
+            >
+              About
             </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={2000}>
-          <img
-            className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[350px] xs:h-[350px] object-cover "
-            src="https://res.cloudinary.com/dnlsjmsfa/image/upload/v1725872933/i7smrmcmhx9dfzptmdwg.jpg"
-            alt="image"
-          />
-          {/* <ExampleCarouselImage text="Third slide" /> */}
-          <Carousel.Caption>
-            <h3>fourth slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            {/* <div className="h-2 rounded-lg bg-red-500"></div> */}
+          </div>
+          <div className=" flex items-center  xs:hidden sm:block md:block lg:block">
+            <p
+              onClick={() => scrollToDiv("projects-section")}
+              className="text-2xl select-none font-medium hover:cursor-pointer"
+            >
+              Projects
             </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+            {/* <div className="h-2 rounded-lg bg-red-500"></div> */}
+          </div>
+          <div className=" flex items-center   xs:hidden sm:block md:block lg:block">
+            <p
+              onClick={() => navigate("/testimonials")}
+              className="text-2xl select-none font-medium hover:cursor-pointer"
+            >
+              Testimonials
+            </p>
+            {/* <div className="h-2 rounded-lg bg-red-500"></div> */}
+          </div>
+          <div className=" flex items-center   xs:hidden sm:block md:block lg:block">
+            <p
+              onClick={() => scrollToDiv("contact-section")}
+              className="text-2xl select-none font-medium hover:cursor-pointer"
+            >
+              Contact Us
+            </p>
+            {/* <div className="h-2 rounded-lg bg-red-500"></div> */}
+          </div>
+          {/* <div className=" flex items-center   xs:hidden sm:block md:block lg:block">
+                    <p onClick={() => navigate('/contact')} className="text-xl select-none font-medium hover:cursor-pointer">
+                        Contact Us
+                    </p> 
+                </div> */}
+          <div className=" flex static items-center xs:block sm:hidden md:hidden lg:hidden">
+            <FaBarsStaggered
+              onClick={() => setBarShow(true)}
+              className="hover:cursor-pointer"
+              size="2em"
+            />
+            {barShow ? (
+              <div className="font-semibold flex flex-col items-start gap-4 pl-4 pt-2 absolute bg-white text-red-500 left-0 right-10 w-[95%] top-2 h-screen">
+                <div className="border-b-2 hover:cursor-pointer static border-white ">
+                  <span className="" onClick={homeClicked}>
+                    Home
+                  </span>
+                  <div className="absolute right-1 top-1">
+                    <RiCloseFill
+                      onClick={() => setBarShow(false)}
+                      className="size-10 fill-black border border-white rounded-lg hover:cursor-pointer"
+                    />
+                  </div>
+                </div>
+                <div
+                  onClick={aboutClicked}
+                  className="border-b-2 hover:cursor-pointer border-white "
+                >
+                  About
+                </div>
+                <div
+                  onClick={projectsClicked}
+                  className="border-b-2 block hover:cursor-pointer border-white "
+                >
+                  Projects
+                </div>
+                <div
+                  onClick={testimonialsClicked}
+                  className="border-b-2 hover:cursor-pointer border-white "
+                >
+                  Testimonials
+                </div>
+                {/* <div onClick={(contactClicked)} className="border-b-2 hover:cursor-pointer border-white ">
+                                Contact Us
+                            </div> */}
+
+                <div
+                  onClick={contactClicked}
+                  className="border-b-2 hover:cursor-pointer border-white "
+                >
+                  Contact Us
+                </div>
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
+        </div>
+        {/* intro */}
+        <Carousel className="w-full">
+          <Carousel.Item interval={2000} className="">
+            <img
+              className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[450px] xs:h-[450px] object-cover"
+              src="https://res.cloudinary.com/dnlsjmsfa/image/upload/v1719559433/szhgrnynx5nyxyy109la.jpg"
+              alt=""
+            />
+            {/* <ExampleCarouselImage text="First slide" /> */}
+            <Carousel.Caption>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item interval={2000}>
+            <img
+              className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[450px] xs:h-[450px] object-cover"
+              src="https://res.cloudinary.com/dnlsjmsfa/image/upload/v1725872850/zsuge1dt2qbpaq5zwokw.jpg"
+              alt="image"
+            />
+            {/* <ExampleCarouselImage text="Second slide" /> */}
+            <Carousel.Caption>
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item interval={2000}>
+            <img
+              className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[450px] xs:h-[450px] object-cover"
+              src="http://res.cloudinary.com/dnlsjmsfa/image/upload/v1719559333/dgmtpopyo6xcglksrxd5.jpg"
+              alt="image"
+            />
+            {/* <ExampleCarouselImage text="Third slide" /> */}
+            <Carousel.Caption>
+              <h3>Third slide label</h3>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item interval={2000}>
+            <img
+              className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[450px] xs:h-[450px] object-cover "
+              src="https://res.cloudinary.com/dnlsjmsfa/image/upload/v1725872933/i7smrmcmhx9dfzptmdwg.jpg"
+              alt="image"
+            />
+            {/* <ExampleCarouselImage text="Third slide" /> */}
+            <Carousel.Caption>
+              <h3>fourth slide label</h3>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </div>
 
       {/* vision */}
       <div className="w-[90%] mx-auto  gap-10 ">
@@ -423,7 +578,7 @@ function Main() {
       </div>
 
       {/* customer slider */}
-      <div
+      <div id="about-section"
         data-aos="fade-right"
         className="client-slider-container bg-gry-700 flex flex-col gap-10 w-screen overflow-hidden p-6 h-auto"
       >
@@ -563,7 +718,9 @@ function Main() {
             future <span className="text-red-500">Directions</span>{" "}
           </div>
           <div className="lg:text-xl md:text-xl sm:text-lg xs:text-lg font-semibold">
-          As we continue to grow, R D Construction Company remains dedicated to pushing the boundaries of what is possible in civil construction, with a firm eye on quality, sustainability, and innovation.
+            As we continue to grow, R D Construction Company remains dedicated
+            to pushing the boundaries of what is possible in civil construction,
+            with a firm eye on quality, sustainability, and innovation.
           </div>
         </div>
       </div>
@@ -662,7 +819,7 @@ function Main() {
       </div>
 
       {/* contact us */}
-      <div className="bg-slate-700 pt-2 flex flex-col gap-4 w-full pb-10">
+      <div id="contact-section" className="bg-slate-700 pt-2 flex flex-col gap-4 w-full pb-10">
         {/* heading */}
         <div className="w-[92%] mx-auto flex flex-col gap-6">
           <p className="lg:text-5xl md:text-5xl sm:text-xl xs:text-2xl text-white text-left">
@@ -700,7 +857,7 @@ function Main() {
                 </p>
               </div>
             </div>
-            {/* mobile,email,whatsapp : flex row */} 
+            {/* mobile,email,whatsapp : flex row */}
             {/* lg:gap-8 md:gap-8 sm:gap-1 xs:gap-1 */}
             {/* lg:gap-8 md:gap-8 sm:gap-1 xs:gap-1 */}
             <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xs:items-start sm:items-start md:items-center lg:items-center justify-center xs:gap-5 sm:gap-5 md:gap-10 lg:gap-10 w-[90%]">
@@ -709,7 +866,10 @@ function Main() {
                 <div>
                   <IoIosCall className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
                 </div>
-                <a href="tel:+919528125887" className="xs:text-lg sm:text-lg lg:text-xl md:text-xl text-blue-300 ">
+                <a
+                  href="tel:+919528125887"
+                  className="xs:text-lg sm:text-lg lg:text-xl md:text-xl text-blue-300 "
+                >
                   9528125887
                 </a>
               </div>
@@ -720,23 +880,27 @@ function Main() {
                 </div>
                 <div>
                   <a
-                    href="mailto:info@rdcc013.com" 
+                    href="mailto:info@rdcc013.com"
                     className="xs:text-lg sm:text-lg lg:text-xl md:text-xl text-blue-300 "
                   >
-                    info@rdcc013.com 
+                    info@rdcc013.com
                   </a>
                 </div>
               </div>
 
               {/* whatsapp */}
-              <div onClick={openWhatsApp} className="flex items-center justify-center lg:gap-3 md:gap-3 sm:gap-3 xs:gap-3 hover:cursor-pointer ">
+              <div
+                onClick={openWhatsApp}
+                className="flex items-center justify-center lg:gap-3 md:gap-3 sm:gap-3 xs:gap-3 hover:cursor-pointer "
+              >
                 <div>
                   <IoLogoWhatsapp className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
                 </div>
-                <div className="xs:text-lg sm:text-lg lg:text-xl md:text-xl underline text-blue-300">9528125887</div>
+                <div className="xs:text-lg sm:text-lg lg:text-xl md:text-xl underline text-blue-300">
+                  9528125887
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

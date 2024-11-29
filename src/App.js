@@ -23,7 +23,7 @@ function App() {
   return (
     
     <div className="App min-h-screen overflow-x-hidden">
-          <Navbar/>
+          {/* <Navbar/> */}
           <Routes>
             <Route path='/' element={<Main/>}/>
             <Route path='/contact' element={<Contact/>}/>
