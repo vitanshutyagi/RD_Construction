@@ -351,7 +351,7 @@ function Main() {
   ];
 
   return (
-    <div className="h-auto flex flex-col items-center justify-center lg:gap-6 md:gap-6 sm:gap-2 xs:gap-1 w-screen ">
+    <div className="h-auto flex flex-col items-center justify-center lg:gap-6 md:gap-6 sm:gap-5 xs:gap-5 w-screen ">
       {/* intro */}
       <Carousel className="w-full">
         <Carousel.Item interval={2000} className="">
