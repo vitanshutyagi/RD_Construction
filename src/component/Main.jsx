@@ -708,7 +708,7 @@ function Main() {
                 </div>
                 <div>
                   <a
-                    href="mailto:info@rdcc013.com"
+                    href="mailto:info@rdcc013.com" 
                     className="xs:text-lg sm:text-lg lg:text-xl md:text-xl text-blue-300 "
                   >
                     info@rdcc013.com
