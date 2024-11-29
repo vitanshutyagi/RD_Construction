@@ -37,26 +37,8 @@ function Main() {
   // const navigate = useNavigate()
 
   const [barShow, setBarShow] = useState(false);
-  function aboutClicked() {
-    navigate("/about");
-    setBarShow(false);
-  }
-  function projectsClicked() {
-    navigate("/projects");
-    setBarShow(false);
-  }
   function testimonialsClicked() {
     navigate("/testimonials");
-    setBarShow(false);
-  }
-  function contactClicked() {
-    sessionStorage.setItem("goToContact", JSON.stringify(true));
-    // console.log("contactNeeded = ",sessionStorage.getItem('goToContact'));
-    navigate("/");
-    setBarShow(false);
-  }
-  function homeClicked() {
-    navigate("/");
     setBarShow(false);
   }
   // ...................................................
@@ -380,6 +362,7 @@ function Main() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    setBarShow(false)
     // setOptionBar(!optionBar)
 };
 
@@ -400,7 +383,7 @@ function Main() {
   return (
     <div className="h-auto flex flex-col items-center justify-center lg:gap-6 md:gap-6 sm:gap-5 xs:gap-5 w-screen ">
       {/* navbar & carousal  */}
-      <div className="w-screen flex flex-col gap-0 bg-red-100">
+      <div className="w-screen flex flex-col gap-0 ">
         <div className=" flex justify-around items-center lg:gap-36 xs:px-2 sm:px-2 md:px-10 lg:px-10 py-2 w-[100%] h[50%] bg-gray-800 text-white">
           <div className="lg:w-[30%] md:w-[35%] sm:w-[40%] xs:w-[60%] gap-4 flex items-center">
             <img
@@ -460,26 +443,26 @@ function Main() {
               size="2em"
             />
             {barShow ? (
-              <div className="font-semibold flex flex-col items-start gap-4 pl-4 pt-2 absolute bg-white text-red-500 left-0 right-10 w-[95%] top-2 h-screen">
+              <div className="font-semibold z-10 flex flex-col items-start gap-4 pl-4 pt-2 absolute bg-gray-800 text-white left-0 right-10 w-[95%] top-2 h-screen">
                 <div className="border-b-2 hover:cursor-pointer static border-white ">
-                  <span className="" onClick={homeClicked}>
+                  {/* <span className="" onClick={homeClicked}>
                     Home
-                  </span>
+                  </span> */}
                   <div className="absolute right-1 top-1">
                     <RiCloseFill
                       onClick={() => setBarShow(false)}
-                      className="size-10 fill-black border border-white rounded-lg hover:cursor-pointer"
+                      className="size-10 fill-white border border-white rounded-lg hover:cursor-pointer"
                     />
                   </div>
                 </div>
                 <div
-                  onClick={aboutClicked}
+                  onClick={() => scrollToDiv("about-section")}
                   className="border-b-2 hover:cursor-pointer border-white "
                 >
                   About
                 </div>
                 <div
-                  onClick={projectsClicked}
+                  onClick={() => scrollToDiv("projects-section")}
                   className="border-b-2 block hover:cursor-pointer border-white "
                 >
                   Projects
@@ -495,7 +478,7 @@ function Main() {
                             </div> */}
 
                 <div
-                  onClick={contactClicked}
+                  onClick={() => scrollToDiv("contact-section")}
                   className="border-b-2 hover:cursor-pointer border-white "
                 >
                   Contact Us
@@ -711,7 +694,7 @@ function Main() {
         </div>
       </div>
 
-      {/* vision */}
+      {/* future direction */}
       <div data-aos="fade-down-left" className="w-[90%] mx-auto  gap-10 ">
         <div className="lg:h-[250px] md:h-[250px] rounded-lg px-2 flex lg:flex-row md:flex-row sm:flex-col xs:flex-col items-center lg:w-[90%] md:w-[90%] sm:w-[100%] xs:w-[100%] mx-auto bg-gray-200">
           <div className="lg:text-5xl md:text-5xl sm:text-2xl xs:text-2xl font-semibold font-mono">
