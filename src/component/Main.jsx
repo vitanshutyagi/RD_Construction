@@ -690,9 +690,9 @@ function Main() {
             </div>
             {/* mobile,email,whatsapp : flex row */}
             {/* lg:gap-8 md:gap-8 sm:gap-1 xs:gap-1 */}
-            <div className="flex items-center justify-between w-[50%]">
+            <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row items-center justify-between w-[50%]">
               {/* mobile */}
-              <div className="flex  items-center justify-center gap-3 md:gap-3 sm:gap-1 xs:gap-1">
+              <div className="flex items-center justify-center gap-3 md:gap-3 sm:gap-1 xs:gap-1">
                 <div>
                   <IoIosCall className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
                 </div>
