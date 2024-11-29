@@ -8,18 +8,19 @@ import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 
-import { FaLocationDot } from "react-icons/fa6";
+import { FaLocationDot, FaWhatsapp } from "react-icons/fa6";
 import { FaBuildingCircleCheck } from "react-icons/fa6";
 import { HiUserGroup } from "react-icons/hi2";
+import { IoIosMail } from "react-icons/io";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { IoIosCall } from "react-icons/io";
 
 import "../styles/Main.css";
 
-import Home from "./Home";
-import Projects from "./Projects";
-import Testimonials from "./Testimonials";
-import About from "./About";
 import ProjectCard from "./ProjectCard";
 import OngoingProjectCard from "./OngoingProjectCard";
+import { PiWhatsappLogo } from "react-icons/pi";
+import { FaWhatsappSquare } from "react-icons/fa";
 
 function Main() {
   const navigate = useNavigate();
@@ -326,6 +327,15 @@ function Main() {
     setOngoingProjects(!ongoingProjects);
   }
 
+  //   function OpenWhatsAppButton() {
+  const openWhatsApp = () => {
+    const phoneNumber = "+919528125887"; // Replace with your desired phone number
+    const message = encodeURIComponent("Hello!"); // Customize your message
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    window.open(whatsappURL, "_blank");
+  };
+
   const images = [
     "/utils/client-logos/agroh-infra.jpg",
     "/utils/client-logos/apco.png",
@@ -341,7 +351,7 @@ function Main() {
   ];
 
   return (
-    <div className="h-auto flex flex-col items-center justify-center lg:gap-6 md:gap-6 sm:gap-2 xs:gap-1 pb-10 w-screen ">
+    <div className="h-auto flex flex-col items-center justify-center lg:gap-6 md:gap-6 sm:gap-2 xs:gap-1 w-screen ">
       {/* intro */}
       <Carousel className="w-full">
         <Carousel.Item interval={2000} className="">
@@ -589,13 +599,24 @@ function Main() {
         {/* first  */}
         <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row gap-0 w-[95%] bg-neutral-200">
           {/* left image */}
-          <div data-aos="fade-up-right" className="xs:w-full sm:w-full md:w-[50%] lg:w-[50%]">
-            <img src="http://res.cloudinary.com/dnlsjmsfa/image/upload/v1719655475/p2xjt81vreyxwwrnwxee.png" className="w-full"/>
+          <div
+            data-aos="fade-up-right"
+            className="xs:w-full sm:w-full md:w-[50%] lg:w-[50%]"
+          >
+            <img
+              src="http://res.cloudinary.com/dnlsjmsfa/image/upload/v1719655475/p2xjt81vreyxwwrnwxee.png"
+              className="w-full"
+            />
           </div>
 
           {/* right para  */}
           <div className="xs:w-full sm:w-full md:w-[50%] lg:w-[50%] flex items-center justify-center xs:text:lg sm:text-lg md:text-2xl lg:text-2xl ">
-            The construction world is rapidly changing. New technology and tools provide significant benefits to age-old techniques. Our skilled craft will always be the hands behind our finished project. Combining their efforts with today's technology streamlines the construction process and brings powerful benefits and efficiencies in the field.
+            The construction world is rapidly changing. New technology and tools
+            provide significant benefits to age-old techniques. Our skilled
+            craft will always be the hands behind our finished project.
+            Combining their efforts with today's technology streamlines the
+            construction process and brings powerful benefits and efficiencies
+            in the field.
           </div>
         </div>
 
@@ -603,18 +624,108 @@ function Main() {
         <div className="flex xs:flex-col-reverse sm:flex-col-reverse md:flex-row lg:flex-row gap-0 w-[95%] bg-neutral-200">
           {/* left para  */}
           <div className="xs:w-full sm:w-full md:w-[50%] lg:w-[50%] flex  items-center justify-center  xs:text:lg sm:text-lg md:text-2xl lg:text-2xl ">
-            <p><span className="text-red-500">"</span> From humble beginnings to industry leadership, our construction company has grown by delivering excellence in every project. Through innovative designs, sustainable practices, and unwavering commitment to quality, we have transformed skylines and built lasting relationships. Today, we stand as a trusted partner, shaping the future one foundation at a time. <span className="text-red-500 ">"</span></p>
+            <p>
+              <span className="text-red-500">"</span> From humble beginnings to
+              industry leadership, our construction company has grown by
+              delivering excellence in every project. Through innovative
+              designs, sustainable practices, and unwavering commitment to
+              quality, we have transformed skylines and built lasting
+              relationships. Today, we stand as a trusted partner, shaping the
+              future one foundation at a time.{" "}
+              <span className="text-red-500 ">"</span>
+            </p>
           </div>
 
           {/* right image  */}
-          <div data-aos="fade-up-left" className="xs:w-full sm:w-full md:w-[50%] lg:w-[50%]">
-            <img src="http://res.cloudinary.com/dnlsjmsfa/image/upload/v1719655517/jymver9plfwqo7eowuwf.png" className="w-full"/>
+          <div
+            data-aos="fade-up-left"
+            className="xs:w-full sm:w-full md:w-[50%] lg:w-[50%]"
+          >
+            <img
+              src="http://res.cloudinary.com/dnlsjmsfa/image/upload/v1719655517/jymver9plfwqo7eowuwf.png"
+              className="w-full"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* contact us */}
+      <div className="bg-slate-700 pt-2 flex flex-col gap-4 w-full pb-10">
+        {/* heading */}
+        <div className="w-[92%] mx-auto flex flex-col gap-6">
+          <p className="lg:text-5xl md:text-5xl sm:text-xl xs:text-2xl text-white text-left">
+            Contact Us
+          </p>
+          <div className="bg-white h-[1px]"></div>
+        </div>
+        {/* data */}
+        <div className=" w-[92%] mx-auto text-white">
+          <div className="w-[96%] mx-auto justify-center items-center flex flex-col gap-8 mb-4">
+            {/* location */}
+            <div className="flex items-center lg:gap-5 md:gap-5 sm:gap-1 xs:gap-1">
+              <FaLocationDot className="fill-white lg:size-10 md:size-10 lg:block md:block sm:hidden xs:hidden" />
+              <div className="flex flex-col gap-2 items-start">
+                <p>
+                  <span className=" font-semibold lg:text-lg md:text-lg">
+                    Registered Office -{" "}
+                  </span>
+                  Village & Post Bhadaula , Hapur Road , Modinagar , Uttar
+                  Pradesh -201204
+                </p>
+                <p id="add2" className="">
+                  <span className=" font-semibold lg:text-lg md:text-lg">
+                    Branch Office -{" "}
+                  </span>
+                  Flat No. S-6, 2nd Floor Ratan Furniture and Electronics
+                  Building Near Modinagar South Rapid Station
+                </p>
+                <p id="add3" className="">
+                  <span className=" font-semibold lg:text-lg md:text-lg">
+                    Corporate Office -{" "}
+                  </span>
+                  7<sup>th</sup> Floor , Royal Kapsons , A-118 , Sector 136,
+                  Noida , Bajidpur , Uttar Pradesh 201301
+                </p>
+              </div>
+            </div>
+            {/* mobile,email,whatsapp : flex row */}
+            {/* lg:gap-8 md:gap-8 sm:gap-1 xs:gap-1 */}
+            <div className="flex items-center justify-between w-[50%]">
+              {/* mobile */}
+              <div className="flex  items-center justify-center gap-3 md:gap-3 sm:gap-1 xs:gap-1">
+                <div>
+                  <IoIosCall className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
+                </div>
+                <a href="tel:+919528125887" className="lg:text-xl md:text-xl text-blue-300 ">
+                  9528125887
+                </a>
+              </div>
+              {/* email */}
+              <div className="flex items-center lg:gap-3 md:gap-3 sm:gap-1 xs:gap-1">
+                <IoIosMail className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
+                <a
+                  href="mailto:info@rdcc013.com"
+                  className="lg:text-xl md:text-xl text-blue-300 "
+                >
+                  info@rdcc013.com
+                </a>
+              </div>
+
+              {/* whatsapp */}
+              <div onClick={openWhatsApp} className="flex items-center justify-center lg:gap-3 md:gap-3 sm:gap-1 xs:gap-1 hover:cursor-pointer">
+                <div>
+                  <IoLogoWhatsapp className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
+                </div>
+                <div className="lg:text-xl md:text-xl underline text-blue-300">9528125887</div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
 
       {/* completed projects */}
-      <div className="w-full bg-red-50"></div>
+      {/* <div className="w-full bg-red-50"></div> */}
     </div>
   );
 }
