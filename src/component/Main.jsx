@@ -556,6 +556,18 @@ function Main() {
         </div>
       </div>
 
+      {/* vision */}
+      <div data-aos="fade-down-left" className="w-[90%] mx-auto  gap-10 ">
+        <div className="lg:h-[250px] md:h-[250px] rounded-lg px-2 flex lg:flex-row md:flex-row sm:flex-col xs:flex-col items-center lg:w-[90%] md:w-[90%] sm:w-[100%] xs:w-[100%] mx-auto bg-gray-200">
+          <div className="lg:text-5xl md:text-5xl sm:text-2xl xs:text-2xl font-semibold font-mono">
+            future <span className="text-red-500">Directions</span>{" "}
+          </div>
+          <div className="lg:text-xl md:text-xl sm:text-lg xs:text-lg font-semibold">
+          As we continue to grow, R D Construction Company remains dedicated to pushing the boundaries of what is possible in civil construction, with a firm eye on quality, sustainability, and innovation.
+          </div>
+        </div>
+      </div>
+
       {/* plant and machinery & growth trajectory : flex */}
       {/* <div className="w-[90%] mx-auto flex justify-between items-center bg-slate-200">
         <div className="w-[48%] xs:hidden sm:hidden lg:block md:block">
