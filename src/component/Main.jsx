@@ -688,35 +688,40 @@ function Main() {
                 </p>
               </div>
             </div>
-            {/* mobile,email,whatsapp : flex row */}
+            {/* mobile,email,whatsapp : flex row */} 
             {/* lg:gap-8 md:gap-8 sm:gap-1 xs:gap-1 */}
-            <div className="flex items-center justify-between w-[50%]">
+            {/* lg:gap-8 md:gap-8 sm:gap-1 xs:gap-1 */}
+            <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xs:items-start sm:items-start md:items-center lg:items-center justify-center xs:gap-5 sm:gap-5 md:gap-10 lg:gap-10 w-[90%]">
               {/* mobile */}
-              <div className="flex  items-center justify-center gap-3 md:gap-3 sm:gap-1 xs:gap-1">
+              <div className="flex items-center justify-center gap-3 md:gap-3 sm:gap-1 xs:gap-1">
                 <div>
                   <IoIosCall className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
                 </div>
-                <a href="tel:+919528125887" className="lg:text-xl md:text-xl text-blue-300 ">
+                <a href="tel:+919528125887" className="xs:text-lg sm:text-lg lg:text-xl md:text-xl text-blue-300 ">
                   9528125887
                 </a>
               </div>
               {/* email */}
-              <div className="flex items-center lg:gap-3 md:gap-3 sm:gap-1 xs:gap-1">
-                <IoIosMail className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
-                <a
-                  href="mailto:info@rdcc013.com"
-                  className="lg:text-xl md:text-xl text-blue-300 "
-                >
-                  info@rdcc013.com
-                </a>
+              <div className="flex items-center lg:gap-3 md:gap-3 sm:gap-3 xs:gap-3">
+                <div>
+                  <IoIosMail className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
+                </div>
+                <div>
+                  <a
+                    href="mailto:info@rdcc013.com" 
+                    className="xs:text-lg sm:text-lg lg:text-xl md:text-xl text-blue-300 "
+                  >
+                    info@rdcc013.com 
+                  </a>
+                </div>
               </div>
 
               {/* whatsapp */}
-              <div onClick={openWhatsApp} className="flex items-center justify-center lg:gap-3 md:gap-3 sm:gap-1 xs:gap-1 hover:cursor-pointer">
+              <div onClick={openWhatsApp} className="flex items-center justify-center lg:gap-3 md:gap-3 sm:gap-3 xs:gap-3 hover:cursor-pointer ">
                 <div>
                   <IoLogoWhatsapp className="fill-white lg:size-10 md:size-10 sm:size-6 xs:size-6" />
                 </div>
-                <div className="lg:text-xl md:text-xl underline text-blue-300">9528125887</div>
+                <div className="xs:text-lg sm:text-lg lg:text-xl md:text-xl underline text-blue-300">9528125887</div>
               </div>
             </div>
 
