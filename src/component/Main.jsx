@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 
-import { FaLocationDot, FaWhatsapp } from "react-icons/fa6";
+import { FaBridge, FaLocationDot, FaWhatsapp } from "react-icons/fa6";
 import { FaBuildingCircleCheck } from "react-icons/fa6";
 import { HiUserGroup } from "react-icons/hi2";
 import { IoIosMail } from "react-icons/io";
@@ -16,6 +16,14 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { IoIosCall } from "react-icons/io";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { RiCloseFill } from "react-icons/ri";
+import { PiBridgeBold } from "react-icons/pi";
+import { TbCarCrane } from "react-icons/tb";
+import { FaRoad } from "react-icons/fa";
+import { FaTractor } from "react-icons/fa";
+import { TbBulldozer } from "react-icons/tb";
+import { GiCargoCrane } from "react-icons/gi";
+import { GiRiver } from "react-icons/gi";
+import { TfiRulerAlt2 } from "react-icons/tfi";
 
 import "../styles/Main.css";
 import logo from "../assets/logo.png";
@@ -356,15 +364,15 @@ function Main() {
     window.open(whatsappURL, "_blank");
   };
 
-  // scroll to div 
+  // scroll to div
   const scrollToDiv = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    setBarShow(false)
+    setBarShow(false);
     // setOptionBar(!optionBar)
-};
+  };
 
   const images = [
     "/utils/client-logos/agroh-infra.jpg",
@@ -561,7 +569,8 @@ function Main() {
       </div>
 
       {/* customer slider */}
-      <div id="about-section"
+      <div
+        id="about-section"
         data-aos="fade-right"
         className="client-slider-container bg-gry-700 flex flex-col gap-10 w-screen overflow-hidden p-6 h-auto"
       >
@@ -596,6 +605,86 @@ function Main() {
               <img src={image} alt={`Duplicate Logo ${index}`} />
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* service cards */}
+      <div className="w-[100%] bg-slate-100 p-10 flex flex-col justify-between items-center xs:gap-5 sm:gap-5 md:gap-5 lg:gap-5  xl:gap-5">
+        <div className="lg:text-6xl md:text-6xl sm:text-3xl xs:text-3xl font-semibold text-red-500 pb-3">
+          Our Services
+        </div>
+        <div className="w-full flex xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row  justify-between xs:gap-5 sm:gap-5 md:gap-0 lg:gap-0 xl:gap-0 bg-">
+          <div data-aos="fade-left" className="group flex flex-col justify-center items-center bg-white xs:w-[100%] sm:w-[100%] md:w-[20%] lg:w-[20%] xl:w-[20%] gap-5 text-center p-5 rounded-2xl">
+            {/* icon */}
+            <div className="w-[60%] rounded-full transition-all bg-rose-100 group-hover:bg-rose-500 h-24 flex justify-center items-center">
+              {/* <TbStack2*/}
+              <TbBulldozer className="size-16" />
+            </div>
+            {/* head */}
+            <div className="xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-xl font-bold">
+              Dismantling Work
+            </div>
+          </div>
+          <div data-aos="fade-right" className="group flex flex-col justify-center items-center bg-white xs:w-[100%] sm:w-[100%] md:w-[20%] lg:w-[20%] xl:w-[20%] gap-5 text-center p-5 rounded-2xl">
+            {/* icon */}
+            <div className="w-[60%] rounded-full transition-all bg-orange-100 group-hover:bg-orange-500 h-24 flex justify-center items-center">
+              {/* <TbStack2*/}
+              <TfiRulerAlt2 className="size-16" />
+            </div>
+            {/* head */}
+            <div className="xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-xl font-bold">
+              Slope Protection works
+            </div>
+          </div>
+          <div data-aos="fade-left" className="group flex flex-col justify-center items-center bg-white xs:w-[100%] sm:w-[100%] md:w-[20%] lg:w-[20%] xl:w-[20%] gap-5 text-center p-5 rounded-2xl">
+            {/* icon */}
+            <div className="w-[60%] rounded-full transition-all bg-blue-100 group-hover:bg-blue-500 h-24 flex justify-center items-center">
+              {/* <TbStack2*/}
+              <GiRiver className="size-16" />
+            </div>
+            {/* head */}
+            <div className="xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-xl font-bold">
+              Irrigation & River Training Works
+            </div>
+          </div>
+          <div data-aos="fade-right" className="group flex flex-col justify-center items-center bg-white xs:w-[100%] sm:w-[100%] md:w-[20%] lg:w-[20%] xl:w-[20%] gap-5 text-center p-5 rounded-2xl">
+            {/* icon */}
+            <div className="w-[60%] rounded-full transition-all bg-gray-200 group-hover:bg-gray-600 h-24 flex justify-center items-center">
+              {/* <TbStack2*/}
+              <FaRoad className="size-16 group-hover:fill-white" />
+            </div>
+            {/* head */}
+            <div className="xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-xl font-bold">
+              Road works including laying and finishing
+            </div>
+          </div>
+        </div>
+        <div className="flex w-full xs:flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-around xs:gap-5 sm:gap-5 md:gap-0 lg:gap-0 xl:gap-0">
+          <div data-aos="fade-right" className="group flex flex-col justify-center items-center bg-white xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] gap-5 text-center p-5 rounded-2xl">
+            {/* icon */}
+            <div className="xs:w-[60%] sm:w-[60%] md:w-[30%] lg:w-[30%] xl:w-[30%] rounded-full transition-all bg-yellow-100 group-hover:bg-yellow-400 h-24 flex justify-center items-center">
+              {/* <TbStack2*/}
+              <GiCargoCrane className="size-16" />
+            </div>
+            {/* head */}
+            <div className="xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-xl font-bold">
+              Design and Build Mechanically Stabilized Earth wall projects in
+              EPC mode with Leveling pad and Crash-barrier Complete with
+              Comprehensive oversight from conception through completion
+            </div>
+          </div>
+          <div data-aos="fade-left" className="group flex flex-col justify-center items-center bg-white xs:w-[100%] sm:w-[100%] md:w-[40%] lg:w-[40%] xl:w-[40%] gap-5 text-center p-5 rounded-2xl">
+            {/* icon */}
+            <div className="xs:w-[60%] sm:w-[60%] md:w-[30%] lg:w-[30%] xl:w-[30%] rounded-full transition-all bg-green-100 group-hover:bg-green-500 h-24 flex justify-center items-center">
+              {/* <TbStack2*/}
+              <PiBridgeBold className="size-16" />
+            </div>
+            {/* head */}
+            <div className="xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-xl font-bold ">
+              Construction of Vehicular Underpass , Culverts , Passenger
+              Underpass and other associated structures in a Roadway Project
+            </div>
+          </div>
         </div>
       </div>
 
@@ -747,9 +836,9 @@ function Main() {
       </div> */}
 
       {/* basic info */}
-      <div className="flex flex-col items-center gap-4 w-full bg-green-10">
+      <div className="flex flex-col items-center gap-4 w-full bg-green-10 bg-slate-100 py-5">
         {/* first  */}
-        <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row gap-0 w-[95%] bg-neutral-200">
+        <div className="flex xs:flex-col sm:flex-col md:flex-row lg:flex-row gap-3 w-[95%] bg-neutral-20">
           {/* left image */}
           <div
             data-aos="fade-up-right"
@@ -763,28 +852,17 @@ function Main() {
 
           {/* right para  */}
           <div className="xs:w-full sm:w-full md:w-[50%] lg:w-[50%] flex items-center justify-center xs:text:lg sm:text-lg md:text-2xl lg:text-2xl ">
-            The construction world is rapidly changing. New technology and tools
-            provide significant benefits to age-old techniques. Our skilled
-            craft will always be the hands behind our finished project.
-            Combining their efforts with today's technology streamlines the
-            construction process and brings powerful benefits and efficiencies
-            in the field.
+          The company offers a vast range of advanced machines, ensuring efficient, precise, and high-quality construction for diverse project needs.
           </div>
         </div>
 
         {/* second  */}
-        <div className="flex xs:flex-col-reverse sm:flex-col-reverse md:flex-row lg:flex-row gap-0 w-[95%] bg-neutral-200">
+        <div className="flex xs:flex-col-reverse sm:flex-col-reverse md:flex-row lg:flex-row gap-3 w-[95%] bg-neutral-20">
           {/* left para  */}
           <div className="xs:w-full sm:w-full md:w-[50%] lg:w-[50%] flex  items-center justify-center  xs:text:lg sm:text-lg md:text-2xl lg:text-2xl ">
             <p>
-              <span className="text-red-500">"</span> From humble beginnings to
-              industry leadership, our construction company has grown by
-              delivering excellence in every project. Through innovative
-              designs, sustainable practices, and unwavering commitment to
-              quality, we have transformed skylines and built lasting
-              relationships. Today, we stand as a trusted partner, shaping the
-              future one foundation at a time.{" "}
-              <span className="text-red-500 ">"</span>
+              Established in 2013, the company has grown steadily, completing major projects, expanding its reach, and earning a strong reputation in the construction industry.
+              {/* <span className="text-red-500 ">"</span> */}
             </p>
           </div>
 
@@ -802,7 +880,10 @@ function Main() {
       </div>
 
       {/* contact us */}
-      <div id="contact-section" className="bg-slate-700 pt-2 flex flex-col gap-4 w-full pb-10">
+      <div
+        id="contact-section"
+        className="bg-slate-700 pt-2 flex flex-col gap-4 w-full pb-10"
+      >
         {/* heading */}
         <div className="w-[92%] mx-auto flex flex-col gap-6">
           <p className="lg:text-5xl md:text-5xl sm:text-xl xs:text-2xl text-white text-left">
