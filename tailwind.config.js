@@ -17,6 +17,15 @@ module.exports = {
       colors: {
         navy: '#0a2f59',
       },
+      animation: {
+        slide: "slide 20s linear infinite",
+      },
+      keyframes: {
+        slide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
     },
   },
   plugins: [],

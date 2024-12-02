@@ -1,12 +1,37 @@
 /* client slider css  */
-
+.slider-track {
+  @apply flex h-[100px];
+}
+@media (min-width: 640px) {
+  .slider-track {
+    animation: slide 20s linear infinite;
+    width: calc(3500%);
+  }
+}
+@media (min-width: 1024px) {
+  .slider-track {
+    animation: slide 35s linear infinite;
+    width: calc(900%);
+  }
+}
+/* .slider-track-small {
+    display: flex;
+    animation: slide 20s linear infinite;
+    height: 100px;
+    width: calc(3500%);
+  }
+.slider-track-large {
+    display: flex;
+    animation: slide 35s linear infinite;
+    height: 100px;
+    width: calc(900%);
+  }
 .slider-track {
     display: flex;
     animation: slide 35s linear infinite;
     height: 100px;
     width: calc(900%);
-    /* Adjust duration (15s) for speed; ensure it's long enough for smooth sliding */
-  }
+  } */
   
   .slider-item {
     flex: 0 0 auto;

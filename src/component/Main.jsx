@@ -588,7 +588,14 @@ function Main() {
           </div>
         </div>
         {/* slider-track flex gap-5 w-[90%] */}
-        <div className=" slider-track flex gap-5 w-[90%]">
+        {/* xs:slider-track-small sm:slider-track-small md:slider-track-large lg:slider-track-large xl:slider-track-large */}
+        {/* "slider-track-large" */}
+        <div className={`slider-track
+          xs:animate-[slide_20s_linear_infinite] xs:w-[3500%]  
+          sm:animate-[slide_20s_linear_infinite] sm:w-[3500%]  
+          md:animate-[slide_20s_linear_infinite] md:w-[3500%]  
+          lg:animate-[slide_35s_linear_infinite] lg:w-[900%]    
+          xl:animate-[slide_35s_linear_infinite] xl:w-[900%] flex gap-5 w-[90%]`} >
           {images.concat(images).map((image, index) => (
             // Duplicating images array to create seamless animation
             <div className="slider-item object-cover bg-white" key={index}>
