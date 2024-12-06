@@ -19,7 +19,7 @@ import Sample from './component/sample';
 
 function App() {
 
-  sessionStorage.setItem('goToContact', JSON.stringify(false));
+  // sessionStorage.setItem('goToContact', JSON.stringify(false));
   return (
     
     <div className="App min-h-screen overflow-x-hidden">

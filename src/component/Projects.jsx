@@ -417,10 +417,10 @@ const Projects = () => {
             <div className="flex xs:flex-col sm:flex-col  md:flex-row lg:flex-row gap-1 self-center w-[70%]">
 
                 {/* show completed projects */}
-                <div onClick={handleProjects} className="xs:w-[100%] sm:w-[100%] md:w-[50%] lg:w-[50%] bg-gradient-to-l from-green-300 to-blue-300 text-red-600 rounded-3xl flex justify-evenly items-center hover:cursor-pointer">
+                <div onClick={handleProjects} className="xs:w-[100%] sm:w-[100%] md:w-[50%] lg:w-[50%] bg-slate-700 p-3 text-white rounded-3xl flex justify-evenly items-center hover:cursor-pointer">
 
-                    <div className=" hover:text-red-800 bottom-28 top-10">
-                        <div className="xs:text-sm sm:text-sm md:text-lg lg:text-lg text-start">
+                    <div className="hover:text-cyan-400 bottom-28 top-10">
+                        <div className=" xs:text-sm sm:text-sm md:text-lg lg:text-lg text-start">
                             click here to see
                         </div>
                         <div className="lg:text-3xl md:text-3xl sm:text-xl xs:text-xl font-semibold">
@@ -435,9 +435,9 @@ const Projects = () => {
                 </div>
 
                 {/* show ongoing projects */}
-                <div onClick={handleOngoingProjects} className="xs:w-[100%] sm:w-[100%] md:w-[50%] lg:w-[50%] bg-gradient-to-r from-green-300 to-blue-300 text-red-600 rounded-3xl flex justify-evenly items-center hover:cursor-pointer">
+                <div onClick={handleOngoingProjects} className="xs:w-[100%] sm:w-[100%] md:w-[50%] lg:w-[50%] bg-slate-700 text-white p-3 rounded-3xl flex justify-evenly items-center hover:cursor-pointer">
 
-                    <div className=" hover:text-red-800 bottom-28 top-10">
+                    <div className=" hover:text-cyan-400 bottom-28 top-10">
                         <div className="xs:text-sm sm:text-sm md:text-lg lg:text-lg text-start">
                             click here to see
                         </div>
@@ -458,7 +458,7 @@ const Projects = () => {
             
             <div className=" xs:h-screen sm:h-screen md:h-auto lg:h-auto rounded-lg flex flex-col gap-4 w-[90%] mx-auto ">
                 <div className="text-3xl font-semibold text-start  text-red-500 flex justify-between items-center">
-                   <div>
+                   <div className="xs:text-xl sm:text-xl md:text-3xl lg:text-3xl xl:text-3xl">
                         Here are the projects which we have completed so far.
                    </div>
                    <div className="hover:cursor-pointer">
@@ -479,9 +479,9 @@ const Projects = () => {
             { ongoingProjects ? 
             <div className=" xs:h-screen sm:h-screen md:h-auto lg:h-auto rounded-lg flex flex-col gap-4 w-[90%] mx-auto ">
             
-                <div className="text-3xl font-semibold text-start  text-red-500 flex justify-between items-center">
-                    <div className="">
-                        Our ongoing projects ....
+                <div className=" font-semibold text-start  text-red-500 flex justify-between items-center">
+                    <div className="xs:text-xl sm:text-xl md:text-3xl lg:text-3xl xl:text-3xl">
+                        Our ongoing projects
                     </div>
                     <div className="hover:cursor-pointer">
                         <IoMdCloseCircleOutline onClick={() => setOngoingProjects(false)} className="fill-slate-600 size-14"/>

@@ -414,7 +414,7 @@ function Main() {
           </div>
           <div className=" flex items-center  xs:hidden sm:block md:block lg:block">
             <p
-              onClick={() => scrollToDiv("projects-section")}
+              onClick={() => navigate("/projects")}
               className="text-2xl select-none font-medium hover:cursor-pointer"
             >
               Projects
@@ -470,7 +470,7 @@ function Main() {
                   About
                 </div>
                 <div
-                  onClick={() => scrollToDiv("projects-section")}
+                  onClick={() => navigate("/projects")}
                   className="border-b-2 block hover:cursor-pointer border-white "
                 >
                   Projects
