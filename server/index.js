@@ -5,15 +5,21 @@ const app = express()
 require('dotenv').config()
 
 const cors = require("cors")
-app.use(cors)
+app.use(cors())
 
 app.use(bodyParser.urlencoded({
     extended: false
 }))
 app.use(express.json())
 
+// import routes 
+const mailRoutes = require("./routes/mailRoutes")
+
+app.use(mailRoutes)
+
 app.get("/", (req, res) => {
-	return res.json({
+	console.log("hello");
+	return res.status(200).json({
 		success: true,
 		message: "Your server is up and running ...",
 	});
