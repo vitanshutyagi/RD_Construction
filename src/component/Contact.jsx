@@ -8,6 +8,7 @@ import { IoIosMail } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoIosCall } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
+import Navbar from "./Navbar";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -78,9 +79,10 @@ function Contact() {
   };
 
   return (
-    <div className=" w-screen flex items-center justify-center h-auto pb-20 bg-slate-100">
+    <div className=" w-screen flex flex-col items-center justify-center h-auto pb-20 bg-slate-100">
+      <Navbar/>
       {/* contact */}
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 mt-6">
         {/* para */}
         <div className="w-full">
           <div className="xs:hidden sm:hidden md:absolute lg:absolute xl:absolute">
@@ -108,7 +110,7 @@ function Contact() {
               </div>
               <div className=" xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
                 <a
-                  className="text-slate-400 hover:text-blue-400 hover:shadow-md underline-offset-4"
+                  className="text-blue-400 hover:text-blue-600 hover:shadow-md underline-offset-4"
                   href="mailto:info@rdcc0139@gmail.com"
                 >
                   info@rdcc0139@gmail.com
@@ -134,7 +136,7 @@ function Contact() {
               <div className=" xs:text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
                 <a
                   href="tel:+918595031668"
-                  className="text-slate-400 hover:text-blue-400 hover:shadow-md underline-offset-4"
+                  className="text-blue-400 hover:text-blue-600 hover:shadow-md underline-offset-4"
                 >
                   +919528125887
                 </a>
@@ -151,7 +153,7 @@ function Contact() {
               >
                 <a
                   href="tel:+918595031668"
-                  className="text-slate-400 hover:text-blue-400 hover:shadow-md underline-offset-4"
+                  className="text-blue-400 hover:text-blue-600 hover:shadow-md underline-offset-4"
                 >
                   +919528125887
                 </a>

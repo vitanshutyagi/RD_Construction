@@ -1,5 +1,7 @@
 import React from "react";
 
+import Navbar from "./Navbar";
+
 const Testimonials = () => {
 
     const images = [
@@ -19,7 +21,8 @@ const Testimonials = () => {
     ]
 
     return (
-        <div  className="flex w-screen flex-col gap-6 min-h-screen pb-4 ">
+        <div  className="flex w-screen flex-col min-h-screen pb-4 ">
+            <Navbar/>
             {/* image and testimonial */}
             <div className="w-full lg:relative md:relative sm:flex sm:flex-col xs:flex xs:flex-col">
                 <div className="w-full lg:relative sm:relative lg:z-10 md:z-10">
@@ -34,7 +37,7 @@ const Testimonials = () => {
             </div>
 
             {/* testimonial overview */}
-            <div className="w-[90%] mx-auto  gap-10 bg-white">
+            <div className="w-[90%] mx-auto mt-6 gap-10 bg-white">
                 <div className="lg:h-[250px] md:h-[250px] rounded-lg px-2 flex lg:flex-row md:flex-row sm:flex-col xs:flex-col items-center lg:w-[70%] md:w-[70%] sm:w-full xs:w-full mx-auto bg-gray-200">
                     <div className="lg:text-2xl md:text-2xl sm:text-lg xs:text-lg font-semibold">
                         Our <span className="font-bold text-red-500 lg:text-3xl md:text-3xl sm:text-2xl xs:text-2xl">Testimonials</span> are assurance and a promise from our side to everybody about our legitimacy and discipline towards our work.
@@ -43,7 +46,7 @@ const Testimonials = () => {
             </div>
 
             {/* testimonials */}
-            <div className="w-[80%] grayscale hover:grayscale-0 mx-auto lg:grid md:grid sm:flex xs:flex sm:flex-col xs:flex-col lg:grid-cols-3 md:grid-cols-3  gap-8 ">
+            <div className="w-[80%] grayscale mt-6 hover:grayscale-0 mx-auto lg:grid md:grid sm:flex xs:flex sm:flex-col xs:flex-col lg:grid-cols-3 md:grid-cols-3  gap-8 ">
             {images.map((src,index) => (
                         <img key={index} src={src} className=" lg:h-96 grayscale hover:grayscale-0 hover:scale-110 hover:shadow-2xl transition-all md:h-96 sm:h-64 xs:h-64 w-80 rounded-2xl"/>
                     ))}

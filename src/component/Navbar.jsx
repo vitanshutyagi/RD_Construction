@@ -72,13 +72,13 @@ const Navbar = () => {
               onClick={aboutClicked}
               className="text-2xl select-none font-medium hover:cursor-pointer"
             >
-              About
+              Careers
             </p>
             {/* <div className="h-2 rounded-lg bg-red-500"></div> */}
           </div>
           <div className=" flex items-center  xs:hidden sm:block md:block lg:block">
             <p
-              onClick={() => scrollToDiv("projects-section")}
+              onClick={() => navigate("/projects")}
               className="text-2xl select-none font-medium hover:cursor-pointer"
             >
               Projects
@@ -96,7 +96,7 @@ const Navbar = () => {
           </div>
           <div className=" flex items-center   xs:hidden sm:block md:block lg:block">
             <p
-              onClick={() => scrollToDiv("contact-section")}
+              onClick={() => navigate("/contact")}
               className="text-2xl select-none font-medium hover:cursor-pointer"
             >
               Contact Us
@@ -133,17 +133,17 @@ const Navbar = () => {
                 >
                   Home
                 </div>
-                <div
+                {/* <div
                   onClick={aboutClicked}
                   className="border-b-2 hover:cursor-pointer border-white "
                 >
                   About
-                </div>
+                </div> */}
                 <div
-                  onClick={() => scrollToDiv("projects-section")}
+                  onClick={() => navigate("/careers")}
                   className="border-b-2 block hover:cursor-pointer border-white "
                 >
-                  Projects
+                  Careers
                 </div>
                 <div
                   onClick={testimonialsClicked}
@@ -156,7 +156,7 @@ const Navbar = () => {
                             </div> */}
 
                 <div
-                  onClick={() => scrollToDiv("contact-section")}
+                  onClick={() => navigate("/contact")}
                   className="border-b-2 hover:cursor-pointer border-white "
                 >
                   Contact Us
@@ -168,60 +168,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* intro */}
-        <Carousel className="w-full">
-          <Carousel.Item interval={2000} className="">
-            <img
-              className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[450px] xs:h-[450px] object-cover"
-              src="https://res.cloudinary.com/dnlsjmsfa/image/upload/v1719559433/szhgrnynx5nyxyy109la.jpg"
-              alt=""
-            />
-            {/* <ExampleCarouselImage text="First slide" /> */}
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item interval={2000}>
-            <img
-              className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[450px] xs:h-[450px] object-cover"
-              src="https://res.cloudinary.com/dnlsjmsfa/image/upload/v1725872850/zsuge1dt2qbpaq5zwokw.jpg"
-              alt="image"
-            />
-            {/* <ExampleCarouselImage text="Second slide" /> */}
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item interval={2000}>
-            <img
-              className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[450px] xs:h-[450px] object-cover"
-              src="http://res.cloudinary.com/dnlsjmsfa/image/upload/v1719559333/dgmtpopyo6xcglksrxd5.jpg"
-              alt="image"
-            />
-            {/* <ExampleCarouselImage text="Third slide" /> */}
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item interval={2000}>
-            <img
-              className="w-full brightness-50 lg:h-[600px] md:h-[600px] sm:h-[450px] xs:h-[450px] object-cover "
-              src="https://res.cloudinary.com/dnlsjmsfa/image/upload/v1725872933/i7smrmcmhx9dfzptmdwg.jpg"
-              alt="image"
-            />
-            {/* <ExampleCarouselImage text="Third slide" /> */}
-            <Carousel.Caption>
-              <h3>fourth slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
+
       </div>
     )
 }

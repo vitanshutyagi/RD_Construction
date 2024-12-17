@@ -1,8 +1,13 @@
 import React from "react";
+import { useEffect, useState } from "react";
+
 import ProjectCard from "./ProjectCard";
 import OngoingProjectCard from "./OngoingProjectCard";
+
 import './ImageGallery.css';
-import { useEffect, useState } from "react";
+
+import Navbar from "./Navbar";
+
 import { FaCheckCircle } from "react-icons/fa";
 import { BsConeStriped } from "react-icons/bs";
 import { IoMdCloseCircleOutline } from "react-icons/io";
@@ -316,7 +321,9 @@ const Projects = () => {
     
 
     return (
-        <div className="min-h-screen pb-6 pt-4 flex flex-col gap-6 w-screen ">
+        <div className="min-h-screen pb-6 flex flex-col w-screen ">
+
+            <Navbar/>
 
             {/* img and text */}
             <div className="w-full lg:relative md:relative  sm:flex sm:flex-col xs:flex xs:flex-col">
@@ -334,8 +341,8 @@ const Projects = () => {
             </div>
 
             {/* intro */}
-            <div className="h-auto w-[90%] flex flex-col  mx-auto items-start gap-4">
-                <p className="text-red-500 lg:text-3xl md:text-3xl sm:text-xl xs:text-xl font-semibold">
+            <div className="h-auto w-[90%] flex flex-col pt-6 mx-auto items-start gap-4">
+                <p className=" lg:text-3xl md:text-3xl sm:text-xl xs:text-xl font-semibold">
                     RD Construction Company offers a comprehensive range of services tailored to the diverse needs of our clients, including:
                 </p>
                 <div className="text-start"> 
@@ -365,10 +372,10 @@ const Projects = () => {
             </div>
 
             {/* project cards */}
-            <div className=" flex flex-col self-center w-[70%] xs:h-[400px] sm:h-[400px] md:h-[660px] lg:h-[660px]">
+            <div className="pt-6 flex flex-col self-center w-[70%] xs:h-[400px] sm:h-[400px] md:h-[660px] lg:h-[660px]">
 
                 {/* yamuna nagar bypass */}
-                <div className="flex flex-col w-[100%] xs:h-[35%] sm:h-[35%] md:h-[50%] lg:h-[50%] relative z-10 bg-blue-300">
+                <div className="flex flex-col w-[100%] xs:h-[35%] sm:h-[35%] md:h-[50%] lg:h-[50%] relative z-10 ">
                     {/* images */}
                     <div className="flex gap-0 w-full justify-between relative brightness-50 h-full">
                         <div className="w-[50%]">
@@ -385,7 +392,7 @@ const Projects = () => {
                 </div>
 
                 {/* jhunjhunu & fatehpur */}
-                <div className="  w-full xs:flex-col sm:flex-col md:flex-row lg:flex-row flex xs:h-[65%] sm:h-[65%] md:h-[50%] lg:h-[50%] bg-green-300">
+                <div className="  w-full xs:flex-col sm:flex-col md:flex-row lg:flex-row flex xs:h-[65%] sm:h-[65%] md:h-[50%] lg:h-[50%] ">
                     {/* jhunjhunu */}
                     <div className="flex flex-col xs:w-[100%] sm:w-[100%] md:w-[50%] lg:w-[50%] xs:h-[50%] sm:h-[50%] md:h-full lg:h-full relative z-10">
                         {/* image */}
@@ -414,7 +421,7 @@ const Projects = () => {
             </div>
 
             {/* see all projects */}
-            <div className="flex xs:flex-col sm:flex-col  md:flex-row lg:flex-row gap-1 self-center w-[70%]">
+            <div className="pt-6 flex xs:flex-col sm:flex-col  md:flex-row lg:flex-row gap-1 self-center w-[70%]">
 
                 {/* show completed projects */}
                 <div onClick={handleProjects} className="xs:w-[100%] sm:w-[100%] md:w-[50%] lg:w-[50%] bg-slate-700 p-3 text-white rounded-3xl flex justify-evenly items-center hover:cursor-pointer">
