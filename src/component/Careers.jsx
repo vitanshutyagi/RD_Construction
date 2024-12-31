@@ -8,9 +8,10 @@ import { IoIosMail } from "react-icons/io";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoIosCall } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
+
 import Navbar from "./Navbar";
 
-function Contact() {
+const Careers = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,32 +32,29 @@ function Contact() {
     e.preventDefault();
     try {
       if (formData.name.trim() == "") {
-          toast.error("Name is required.");
+        toast.error("Name is required.");
         return;
       }
       if (formData.email.trim() == "") {
-          toast.error("Email is required.");
+        toast.error("Email is required.");
         return;
       }
       if (formData.number.trim() == "") {
-          toast.error("Number is required.");
+        toast.error("Number is required.");
         return;
       }
-    //   console.log("formdata = ", formData);
+      //   console.log("formdata = ", formData);
       const response = await axios.post(`http://localhost:4000/sendMail`, {
         formData,
       });
-      if(response.data.success)
-      {
-        toast.success("Thank You for contacting us!")
+      if (response.data.success) {
+        toast.success("Thank You for contacting us!");
+      } else {
+        toast.error("Error in sending mail !");
       }
-      else
-      {
-        toast.error("Error in sending mail !")
-      }
-    //   console.log("success res = ", response);
+      //   console.log("success res = ", response);
     } catch (error) {
-    //   console.log("error = ", error);
+      //   console.log("error = ", error);
       return;
     }
 
@@ -77,27 +75,10 @@ function Contact() {
 
     window.open(whatsappURL, "_blank");
   };
-
   return (
-    <div className=" w-screen flex flex-col items-center justify-center h-auto pb-20 bg-slate-200">
-      <Navbar/>
-      {/* contact */}
-      <div className="w-full flex flex-col gap-4 mt-6">
-        {/* para */}
-        <div className="w-full">
-          <div className="xs:hidden sm:hidden md:absolute lg:absolute xl:absolute">
-            <img src="/utils/yellow-semicircle.svg" />
-          </div>
-          <div className="w-fill flex flex-col gap-6 items-center">
-            <div className="xs:text-2xl sm:text-2xl md:text-5xl lg:text-5xl xl:text-5xl  font-semibold">
-              Let's Stay Connected
-            </div>
-            <div className="text-lg text-slate-400 text-center">
-              If you have any query or just want to know anything about us, feel
-              free to contact.
-            </div>
-          </div>
-        </div>
+    <div className=" w-screen flex flex-col xs:gap-0 sm:gap-0 md:gap-6 lg:gap-6 xl:gap-6 items-center justify-center h-auto pb-20 bg-slate-200">
+
+        <Navbar/>
 
         {/* contact details & form */}
         <div className="flex justify-evenly xs:flex-col-reverse sm:flex-col-reverse md:flex-row lg:flex-row xl:flex-row xs:gap-5 sm:gap-5 md:gap-0 lg:gap-0 xl:gap-0 w-full ">
@@ -253,8 +234,7 @@ function Contact() {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
-}
-export default Contact;
+};
+export default Careers;

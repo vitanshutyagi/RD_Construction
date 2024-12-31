@@ -69,7 +69,7 @@ const Navbar = () => {
           </div>
           <div className=" flex items-center xs:hidden sm:block md:block lg:block visible">
             <p
-              onClick={aboutClicked}
+              onClick={() => navigate('/careers')}
               className="text-2xl select-none font-medium hover:cursor-pointer"
             >
               Careers

@@ -16,6 +16,7 @@ import Main from './component/Main';
 import Sample from './component/sample';
 
 import { Toaster } from 'react-hot-toast';
+import Careers from './component/Careers';
 // import SlideInComponent from './component/SlideInComponent';
 // import ComponentWithSliding from './component/ComponentWithSliding';
 
@@ -33,7 +34,7 @@ function App() {
             <Route path='/testimonials' element={<Testimonials/>}/>
             <Route path='/projects' element={<Projects />}/>
             <Route path='/home' element={<Home />}/>
-            <Route path='/slide' element={<Sample />}/>
+            <Route path='/careers' element={<Careers />}/>
           </Routes>
           <Toaster
         position="top-center"
