@@ -18,6 +18,7 @@ function Contact() {
     subject: "",
     message: "",
   });
+  const [sending, setSending] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -30,33 +31,37 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setSending(true);
       if (formData.name.trim() == "") {
-          toast.error("Name is required.");
+        toast.error("Name is required.");
+        setSending(false);
         return;
       }
       if (formData.email.trim() == "") {
-          toast.error("Email is required.");
+        toast.error("Email is required.");
+        setSending(false);
         return;
       }
       if (formData.number.trim() == "") {
-          toast.error("Number is required.");
+        toast.error("Number is required.");
+        setSending(false);
         return;
       }
-    //   console.log("formdata = ", formData);
+      //   console.log("formdata = ", formData);
       const response = await axios.post(`http://localhost:4000/sendMail`, {
         formData,
       });
-      if(response.data.success)
-      {
-        toast.success("Thank You for contacting us!")
+      if (response.data.success) {
+        toast.success("Thank You for contacting us!");
+        setSending(false);
+      } else {
+        toast.error("Error in sending mail !");
+        setSending(false);
       }
-      else
-      {
-        toast.error("Error in sending mail !")
-      }
-    //   console.log("success res = ", response);
+      //   console.log("success res = ", response);
     } catch (error) {
-    //   console.log("error = ", error);
+      toast.error("Error in sending mail !");
+      setSending(false);
       return;
     }
 
@@ -80,7 +85,7 @@ function Contact() {
 
   return (
     <div className=" w-screen flex flex-col items-center justify-center h-auto pb-20 bg-slate-200">
-      <Navbar/>
+      <Navbar />
       {/* contact */}
       <div className="w-full flex flex-col gap-4 mt-6">
         {/* para */}
@@ -244,11 +249,34 @@ function Contact() {
 
             {/* button */}
             <div className="">
-              <button
+              {/* <button
                 onClick={handleSubmit}
                 className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg"
               >
                 Send Message
+              </button> */}
+              <button
+                className={`px-12 text-xl py-3 bg-gradient-to-r text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-4
+                ${
+                  sending
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "from-blue-500 to-purple-500 "
+                }
+            `}
+                onClick={handleSubmit}
+                disabled={sending} // Disable the button when sending is true
+              >
+                {sending ? (
+                  <>
+                    <div
+                      className="w-4 h-4 border-2 border-t-2 border-t-blue-200 border-blue-400 rounded-full animate-spin"
+                      aria-hidden="true"
+                    ></div>
+                    Sending...
+                  </>
+                ) : (
+                  "Send"
+                )}
               </button>
             </div>
           </div>

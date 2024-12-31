@@ -20,6 +20,8 @@ const Careers = () => {
     message: "",
   });
 
+  const [sending,setSending] = useState(false)
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({

@@ -4,49 +4,83 @@ const router = express.Router();
 
 require("dotenv").config();
 
+// contact mails
 router.post("/sendMail", async (req, res) => {
   try {
     const formData = req.body.formData;
-    // console.log(formData);
 
-    const MAIL_USER = "testxnodemailer@gmail.com"
-    const MAIL_PASSWORD = "dxyx qyjo optu qult"
-
-    // validation done in frontend
-
-    // Create a transporter object using Gmail service
+    // Create transporter
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: MAIL_USER, // Your Gmail address
-        pass: MAIL_PASSWORD, // Your Gmail password or App Password
+        user: process.env.MAIL_USER, // Your Gmail address
+        pass: process.env.MAIL_PASSWORD, // Your Gmail password or App Password
       },
     });
 
     // Setup email data
     let mailOptions = {
-      from: `${MAIL_USER}`, // Sender's email
-      to: formData.email, // Receiver's email from request body
-      subject: "Hello from RD const !", // Subject from request body
-      text: "We got your message, out team will contact you soon!!!", // Plain text body
-      // HTML body
+      from: `${process.env.MAIL_USER}`,
+      to: formData.email,
+      subject: "Hello from RD const !",
+      text: "We got your message, out team will contact you soon!!!",
     };
 
-    // Send the email
     let info = await transporter.sendMail(mailOptions);
 
-    // dxyx qyjo optu qult : app pass
     return res.status(200).json({
       success: true,
       message: "Mail sent",
     });
   } catch (err) {
-    // console.log(err);
+
     return res.status(500).json({
       success: false,
       message: "Error in sending mail : " + err.message,
     });
   }
 });
+
+// career mails
+router.post("/sendCareerMail", async(req,res) => {
+  try
+  {
+    const formData = req.body.formData
+
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.MAIL_USER, 
+        pass: process.env.MAIL_PASSWORD, 
+      },
+    });
+
+    let mailOptions = {
+      from: `${process.env.MAIL_USER}`,
+      to: formData.email,
+      subject: "Hello from RD const !",
+      text: "We got your message, out team will contact you soon!!!",
+      attachchments: [{
+        filename:'resume.pdf',
+        path:`${formData.filePath}`
+      }]
+    };
+
+    let info = await transporter.sendMail(mailOptions);
+
+    return res.status(200).json({
+      success: true,
+      message: "Mail sent",
+    });
+
+  }
+  catch(err)
+  {
+    return res.status(500).json({
+      success: false,
+      message: "Error in sending mail : " + err.message,
+    });
+  }
+})
 
 module.exports = router;
