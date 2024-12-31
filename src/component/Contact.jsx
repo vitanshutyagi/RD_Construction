@@ -47,8 +47,8 @@ function Contact() {
         setSending(false);
         return;
       }
-      //   console.log("formdata = ", formData);
-      const response = await axios.post(`${process.env.BASE_URL}sendMail`, {
+        console.log("url = ", process.env.REACT_APP_BASE_URL);
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}sendMail`, {
         formData,
       });
       if (response.data.success) {
@@ -56,11 +56,13 @@ function Contact() {
         setSending(false);
       } else {
         toast.error("Error in sending mail !");
+        console.log("response.data = ",response.data);
         setSending(false);
       }
       //   console.log("success res = ", response);
     } catch (error) {
       toast.error("Error in sending mail !");
+      console.log("catch err = ",error);
       setSending(false);
       return;
     }
