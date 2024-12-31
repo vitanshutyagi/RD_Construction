@@ -48,7 +48,7 @@ function Contact() {
         return;
       }
       //   console.log("formdata = ", formData);
-      const response = await axios.post(`http://localhost:4000/sendMail`, {
+      const response = await axios.post(`${process.env.BASE_URL}sendMail`, {
         formData,
       });
       if (response.data.success) {
