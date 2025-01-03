@@ -448,7 +448,7 @@ function Main() {
         </Carousel>
 
       {/* vision */}
-      <div className="w-[90%] mx-auto  gap-10 ">
+      <div className="w-[90%] mx-auto mt-6 gap-10 ">
         <div className="lg:h-[250px] md:h-[250px] rounded-lg px-2 flex lg:flex-row md:flex-row sm:flex-col xs:flex-col items-center lg:w-[90%] md:w-[90%] sm:w-[100%] xs:w-[100%] mx-auto bg-gray-200">
           <div className="lg:text-5xl md:text-5xl sm:text-2xl xs:text-2xl font-semibold font-mono">
             our <span className="text-red-500">Vision</span>{" "}
