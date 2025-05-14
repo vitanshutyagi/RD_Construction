@@ -28,13 +28,13 @@ function App() {
     <div className="App min-h-screen overflow-x-hidden">
           {/* <Navbar/> */}
           <Routes>
-            <Route path='/' element={<Main/>}/>
-            <Route path='/contact' element={<Contact/>}/>
-            <Route path='/about' element={<About />}/>
-            <Route path='/testimonials' element={<Testimonials/>}/>
-            <Route path='/projects' element={<Projects />}/>
-            <Route path='/home' element={<Home />}/>
-            <Route path='/careers' element={<Careers />}/>
+            // <Route path='/' element={<Main/>}/>
+            // <Route path='/contact' element={<Contact/>}/>
+            // <Route path='/about' element={<About />}/>
+            // <Route path='/testimonials' element={<Testimonials/>}/>
+            // <Route path='/projects' element={<Projects />}/>
+            // <Route path='/home' element={<Home />}/>
+            // <Route path='/careers' element={<Careers />}/>
           </Routes>
           <Toaster
         position="top-center"
